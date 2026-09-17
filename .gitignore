@@ -1,0 +1,39 @@
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+
+# Generated storage
+backend/storage/cache/
+backend/storage/artifacts/
+backend/storage/uploads/
+backend/storage/tmp/
+backend/storage/temp/
+
+# Generated media
+*.mp3
+*.wav
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.webm
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
