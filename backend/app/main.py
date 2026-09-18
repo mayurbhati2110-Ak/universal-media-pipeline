@@ -5,6 +5,8 @@ from app.api.reasoning import router as reasoning_router
 
 from app.core.config import settings
 
+from fastapi.middleware.cors import CORSMiddleware
+
 
 app = FastAPI(
     title=settings.APP_NAME,
@@ -21,6 +23,17 @@ app.include_router(media_router)
 
 # Optional AI reasoning API
 app.include_router(reasoning_router)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 @app.get("/")
